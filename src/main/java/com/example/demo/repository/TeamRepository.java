@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.domain.Team;
 
+
 /**
  * Teamsテーブルを操作用のクラスです．
  * @author nhson
@@ -34,7 +35,7 @@ public class TeamRepository {
 		team.setLeagueName(rs.getString("league_name"));
 		team.setTeamName(rs.getString("team_name"));
 		team.setHeadquarters(rs.getString("headquarters"));
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy年M月d日");
 		LocalDate inauguration = LocalDate.parse(rs.getString("inauguration"),format);
 		team.setInauguration(inauguration);
 		team.setHistory(rs.getString("history"));
@@ -46,7 +47,7 @@ public class TeamRepository {
 	 * @return　順番になってないで全チーム一覧を返します。
 	 */
 	public List<Team> findAll(){
-		String sql = "Select id, leagua_name, team_name, headquarters,"
+		String sql = "Select id, league_name, team_name, headquarters,"
 				+ "inauguration, history from " + TEAMS_TABLE +";";
 		List<Team> teams= template.query(sql, TEAM_ROW_MAPPER);
 		return teams;
@@ -58,7 +59,7 @@ public class TeamRepository {
 	 * @return　取得したいチームの情報
 	 */
 	public Team detail(int id) {
-		String sql =  "Select id, leagua_name, team_name, headquarters,"
+		String sql =  "Select id, league_name, team_name, headquarters,"
 				+ "inauguration, history from " + TEAMS_TABLE +" where id =:id;";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 		Team team = template.queryForObject(sql, param, TEAM_ROW_MAPPER);

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>球団名</h3>
+	<span th:text="${team.teamName}"></span>
+	<h3>本拠地</h3>
+	<span th:text="${team.headquarters}"></span>
+	<h3>発足</h3>
+	<span th:text="${team.dateOut()}"></span>
+	<h3>歴史</h3>
+	<div th:each="history:${team.historyToList()}">
+		<span th:text="${history}"></span>
+	</div> 
+	<form action="Back" th:action="@{/team}" method="post">
+		<button>戻る</button>
+	</form>
+　<!--  <button th:onclick="@{/ex-intermediate/team}">戻る</button>-->
+</body>
+</html>

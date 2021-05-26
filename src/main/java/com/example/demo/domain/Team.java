@@ -1,7 +1,9 @@
 package com.example.demo.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * チームクラスです．
@@ -89,5 +91,22 @@ public class Team {
 				+ headquarters + ", inauguration=" + inauguration + ", history=" + history + "]";
 	}
 	
+	public String dateOut() {
+		return inauguration.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"));
+	}
 	
+	/**
+	 * historyからリストに変更するメソッドです．
+	 * @return 歴史のリスト
+	 */
+	public List<String> historyToList(){
+		List<String> listOfHistory = new ArrayList<>();
+		String [] historyList = history.split("↓");
+		for(int i = 0;i<historyList.length-1;i++) {
+			listOfHistory.add(historyList[i]);
+			listOfHistory.add("↓");
+		}
+		listOfHistory.add(historyList[historyList.length-1]);
+		return listOfHistory;
+	}
 }
