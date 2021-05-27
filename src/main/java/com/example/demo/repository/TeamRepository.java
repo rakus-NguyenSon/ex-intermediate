@@ -44,6 +44,7 @@ public class TeamRepository {
 	
 	/**
 	 * チーム一覧を取得します．
+	 * 
 	 * @return　順番になってないで全チーム一覧を返します。
 	 */
 	public List<Team> findAll(){
@@ -55,6 +56,7 @@ public class TeamRepository {
 	
 	/**
 	 * 主キーからチーム情報を取得します．
+	 * 
 	 * @param id　情報を取得したいチームのID
 	 * @return　取得したいチームの情報
 	 */

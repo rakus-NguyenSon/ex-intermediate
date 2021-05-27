@@ -30,6 +30,12 @@ public class TeamController {
 		return "showTeamsList";
 	}
 	
+	/**
+	 * チーム詳細情報ページに移動するメソッドです.
+	 * @param id 表示されたいチームのID。
+	 * @param model
+	 * @return　チーム詳細情報ページのファイル名。
+	 */
 	@RequestMapping("/detail")
 	public String detail(String id, Model model) {
 		

@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * チームクラスです．
+ * 
  * @author nhson
  *
  */
@@ -91,13 +92,13 @@ public class Team {
 				+ headquarters + ", inauguration=" + inauguration + ", history=" + history + "]";
 	}
 	
-	public String dateOut() {
+	public String dateFormat() {
 		return inauguration.format(DateTimeFormatter.ofPattern("yyyy年MM月dd日"));
 	}
 	
 	/**
 	 * historyからリストに変更するメソッドです．
-	 * @return 歴史のリスト
+	 * @return 歴史のリスト。
 	 */
 	public List<String> historyToList(){
 		List<String> listOfHistory = new ArrayList<>();

@@ -10,7 +10,7 @@
 	<h3>本拠地</h3>
 	<span th:text="${team.headquarters}"></span>
 	<h3>発足</h3>
-	<span th:text="${team.dateOut()}"></span>
+	<span th:text="${team.dateFormat()}"></span>
 	<h3>歴史</h3>
 	<div th:each="history:${team.historyToList()}">
 		<span th:text="${history}"></span>

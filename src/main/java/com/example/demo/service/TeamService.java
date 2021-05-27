@@ -19,6 +19,7 @@ public class TeamService {
 	
 	/**
 	 * チーム一覧を取得します．
+	 * 
 	 * @return　順番になってる全チーム一覧を返します。
 	 */
 	public List<Team> loadAllTeam() {
@@ -29,6 +30,7 @@ public class TeamService {
 	
 	/**
 	 * 主キーからチーム情報を取得します．
+	 * 
 	 * @param id　情報を取得したいチームのID
 	 * @return　取得したいチームの情報
 	 */
