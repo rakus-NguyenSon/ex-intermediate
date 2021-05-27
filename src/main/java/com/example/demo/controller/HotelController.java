@@ -47,8 +47,9 @@ public class HotelController {
 	 * @return　ホテル検索画面にリダイレクトする。
 	 */
 	@RequestMapping("/search")
-	public String search(HotelForm form, RedirectAttributes redirectAtrribute) {
-		System.out.println(form.getPrice());
+	public String search(HotelForm form, RedirectAttributes redirectAtrribute) {		
+		
+		//Move this block of code to Service Class
 		if (form.getPrice().isBlank()) {
 			List<Hotel> hotels = hotelService.loadAllHotels();
 			redirectAtrribute.addFlashAttribute("hotelsList", hotels);

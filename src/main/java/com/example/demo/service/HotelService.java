@@ -34,4 +34,5 @@ public class HotelService {
 	public List<Hotel> loadLessThanPrice(Integer price){
 		return hotelRepository.findLessThanPrice(price);
 	}
+	
 }
