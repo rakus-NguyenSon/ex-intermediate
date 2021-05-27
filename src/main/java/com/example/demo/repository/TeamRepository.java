@@ -16,6 +16,7 @@ import com.example.demo.domain.Team;
 
 /**
  * Teamsテーブルを操作用のクラスです．
+ * 
  * @author nhson
  *
  */
